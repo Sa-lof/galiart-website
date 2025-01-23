@@ -1,20 +1,31 @@
 'use client';
 
 import React from 'react';
-import { Box, Container, Typography, Grid } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import MiImagen from '../../images/about/image2.png';
 
 const machinery = [
   {
     title: 'Lorem ipsum dolor',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: '/images/machinery-1.jpg'
+    image: MiImagen.src
   },
   {
     title: 'Lorem ipsum dolor',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: '/images/machinery-2.jpg'
+    image: MiImagen.src
+  },
+  {
+    title: 'Lorem ipsum dolor',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: MiImagen.src
+  },
+  {
+    title: 'Lorem ipsum dolor',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: MiImagen.src
   }
 ];
 
@@ -26,33 +37,46 @@ const OurMachinery = () => {
           Nuestra maquinaria
         </Typography>
 
-        <Grid container spacing={6}>
+        {/* Horizontal Scroll Container */}
+        <Box
+          className="flex overflow-x-auto space-x-6"
+          style={{
+            display: 'flex',
+            overflowX: 'auto',
+            gap: '1.5rem',
+            paddingBottom: '1rem',
+            scrollbarWidth: 'none',
+          }}
+        >
           {machinery.map((item, index) => (
-            <Grid item xs={12} md={6} key={index}>
-              <motion.div
-                whileHover={{ y: -10 }}
-                className="bg-white rounded-lg overflow-hidden"
-              >
-                <Box className="relative h-[300px]">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
-                </Box>
-                <Box className="p-6">
-                  <Typography variant="h6" className="font-bold mb-3">
-                    {item.title}
-                  </Typography>
-                  <Typography className="text-gray-600">
-                    {item.description}
-                  </Typography>
-                </Box>
-              </motion.div>
-            </Grid>
+            <motion.div
+              key={index}
+              whileHover={{ y: -10 }}
+              className="bg-white rounded-lg overflow-hidden flex-shrink-0"
+              style={{
+                minWidth: '500px',
+                width: '500px',
+              }}
+            >
+              <Box className="relative h-[200px]">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
+              </Box>
+              <Box className="p-6">
+                <Typography variant="h6" className="font-bold mb-3">
+                  {item.title}
+                </Typography>
+                <Typography className="text-gray-600">
+                  {item.description}
+                </Typography>
+              </Box>
+            </motion.div>
           ))}
-        </Grid>
+        </Box>
       </Container>
     </Box>
   );

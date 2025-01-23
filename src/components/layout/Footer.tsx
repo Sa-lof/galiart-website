@@ -3,21 +3,28 @@ import { Box, Container, Typography, Grid, Button } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Facebook, Twitter, LinkedIn, Instagram } from '@mui/icons-material';
+import MiImagen from '../../images/Group 1.png';
 
 const Footer = () => {
   return (
-    <Box className="bg-blue-600 text-white">
+    <Box className="bg-[#7EADD2] text-white">
       <Container>
         <Box className="py-16">
           <Grid container spacing={6}>
             <Grid item xs={12} md={6}>
               <Box className="mb-6">
+              <Link href="/" className="flex items-center gap-2">
                 <Image
-                  src="/images/logo-white.svg"
+                  src={MiImagen}
                   alt="Galiart Logo"
-                  width={120}
+                  width={40}
                   height={40}
+                  className="cursor-pointer"
                 />
+                <Typography variant="h6" className="text-[#00253C] font-bold">
+                  GALIART
+                </Typography>
+              </Link>
               </Box>
               <Typography variant="h3" className="text-2xl font-bold mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -28,7 +35,7 @@ const Footer = () => {
               </Typography>
               <Button
                 variant="contained"
-                className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3"
+                className="text-[#7EADD2] bg-white border-white hover:border-[#00253C] hover:bg-[#00253C] hover:text-white  px-8 py-3"
               >
                 Cotiza ahora
               </Button>
@@ -91,11 +98,11 @@ const Footer = () => {
           </Grid>
         </Box>
 
-        <Box className="border-t border-blue-400 py-6">
+        <Box className="border-t border-white py-6">
           <Grid container justifyContent="space-between" alignItems="center">
             <Grid item>
               <Typography className="text-blue-100">
-                © Copyright GALIART 2024. by Modern Web Developer
+                © Copyright GALIART 2024. by Amoxtli Web Developers
               </Typography>
             </Grid>
             <Grid item>

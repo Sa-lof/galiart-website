@@ -38,7 +38,7 @@ const ContactForm = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white rounded-lg p-6 shadow-sm"
+      className="bg-white rounded-lg p-6 shadow-sm pt-10 sm:pt-20 md:pt-40 lg:pt-40"
     >
       <form onSubmit={handleSubmit} className="space-y-4">
         <TextField
@@ -88,7 +88,7 @@ const ContactForm = () => {
           type="submit"
           variant="contained"
           fullWidth
-          className="bg-blue-600 hover:bg-blue-700 py-3"
+          className="text-white bg-[#7EADD2] hover:bg-[#00253C] py-3"
         >
           Enviar
         </Button>

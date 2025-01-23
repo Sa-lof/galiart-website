@@ -12,15 +12,19 @@ import {
   ListItem,
   ListItemText,
   useTheme,
-  useMediaQuery
+  useMediaQuery,
+  Typography
 } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
+import MiImagen from '../../images/Group 1.png';
+import QuoteModal from '../layout/CotizarModal';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -34,7 +38,6 @@ const Navbar = () => {
 
   const allLinks = [
     ...navLinks,
-    { href: '/cotizar', label: 'Cotiza ahora' }
   ];
 
   const isActiveLink = (path: string) => {
@@ -45,6 +48,14 @@ const Navbar = () => {
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
   };
 
   const mobileMenu = (
@@ -61,7 +72,7 @@ const Navbar = () => {
             onClick={handleDrawerToggle}
             className={`rounded-[30px] mb-2 ${
               isActiveLink(link.href) 
-                ? 'bg-blue-50 text-blue-600 font-bold' 
+                ? 'bg-[#7EADD2] text-white font-bold' 
                 : 'hover:bg-gray-50'
             }`}
           >
@@ -70,54 +81,79 @@ const Navbar = () => {
             </Link>
           </ListItem>
         ))}
+        <ListItem
+        onClick={() => {
+          handleModalOpen();
+          handleDrawerToggle();
+        }}
+        className="rounded-[30px] bg-[#00253C] hover:bg-[#7EADD2] text-white text-center py-2 mt-4 cursor-pointer"
+      >
+        Cotiza ahora
+      </ListItem>
       </List>
     </Box>
   );
 
   return (
     <AppBar position="fixed" className="bg-white shadow-none">
-      <Toolbar className="container mx-auto justify-between">
-        <Link href="/">
+      {/* Sección Azul */}
+      <Box className="bg-[#7EADD2] py-2 text-center">
+        <Typography className="text-sm text-white font-medium">
+          Descubre todo lo que <span className="font-bold">GALIART</span> tiene para ti
+        </Typography>
+      </Box>
+
+      <Toolbar className="container mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/logo.svg"
+            src={MiImagen}
             alt="Galiart Logo"
-            width={120}
+            width={40}
             height={40}
             className="cursor-pointer"
           />
+          <Typography variant="h6" className="text-[#00253C] font-bold">
+            GALIART
+          </Typography>
         </Link>
-        
+
         {/* Desktop Navigation */}
         <Box className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
-            <Link 
+            <Link
               key={link.href}
-              href={link.href} 
-              className={`text-gray-800 hover:text-blue-600 transition-colors ${
+              href={link.href}
+              className={`text-gray-800 hover:text-[#7EADD2] transition-colors ${
                 isActiveLink(link.href) ? 'font-bold' : ''
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <Button 
-            variant="contained" 
-            className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-[30px]"
+        </Box>
+
+        {/* Botón Cotiza ahora (desktop) */}
+        <Box className="hidden md:block">
+          <Button
+            variant="contained"
+            className="bg-[#00253C] hover:bg-[#7EADD2] px-6 py-2 rounded-[30px]"
+            onClick={handleModalOpen}
           >
             Cotiza ahora
           </Button>
         </Box>
 
         {/* Mobile Menu Button */}
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          edge="start"
-          onClick={handleDrawerToggle}
-          className="md:hidden"
-        >
-          <MenuIcon className="text-gray-800" />
-        </IconButton>
+        <Box className="md:hidden">
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerToggle}
+          >
+            <MenuIcon className="text-gray-800" />
+          </IconButton>
+        </Box>
 
         {/* Mobile Drawer */}
         <Drawer
@@ -126,9 +162,8 @@ const Navbar = () => {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true // Better mobile performance
+            keepMounted: true
           }}
-          className="md:hidden"
           PaperProps={{
             className: 'w-[280px]'
           }}
@@ -136,6 +171,9 @@ const Navbar = () => {
           {mobileMenu}
         </Drawer>
       </Toolbar>
+
+      {/* Modal Cotiza ahora */}
+      <QuoteModal open={isModalOpen} onClose={handleModalClose} />
     </AppBar>
   );
 };
