@@ -15,10 +15,10 @@ export default function ContactPage() {
       <Box className="py-16">
         <Container>
           <Grid container spacing={6}>
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} md={7}>
               <ContactInfo />
             </Grid>
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={5}>
               <ContactForm />
             </Grid>
           </Grid>

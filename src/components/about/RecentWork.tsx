@@ -1,17 +1,22 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Container, Typography, Grid } from '@mui/material';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import MiImagen from '../../images/about/image2.png';
+import MiImagen2 from '../../images/about/image3.png';
+import MiImagen3 from '../../images/about/image4.png';
 
 const partners = [
-  { name: 'Meta', icon: 'M' },
-  { name: 'Apple', icon: 'A' },
-  { name: 'Stark', icon: 'S' }
+  { name: 'Meta', icon: 'M', gallery: [MiImagen.src, MiImagen.src, MiImagen.src] },
+  { name: 'Apple', icon: 'A', gallery: [MiImagen2.src, MiImagen2.src, MiImagen2.src] },
+  { name: 'Stark', icon: 'S', gallery: [MiImagen3.src, MiImagen3.src, MiImagen3.src] },
 ];
 
 const RecentWork = () => {
+  const [selectedPartner, setSelectedPartner] = useState(partners[0]);
+
   return (
     <Box className="py-16">
       <Container>
@@ -27,18 +32,20 @@ const RecentWork = () => {
                 Lorem ipsum dolor
               </Typography>
               <Typography className="text-gray-600 mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Sed do eiusmod tempor incididunt ut labore et dolore.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </Typography>
-              
+
               <Box className="space-y-3">
                 {partners.map((partner, index) => (
                   <motion.div
                     key={index}
                     whileHover={{ x: 10 }}
-                    className="flex items-center gap-3"
+                    className={`flex items-center gap-3 cursor-pointer ${
+                      selectedPartner.name === partner.name ? 'text-[#7EADD2] font-bold' : ''
+                    }`}
+                    onClick={() => setSelectedPartner(partner)}
                   >
-                    <Box className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                    <Box className="w-10 h-10 rounded-full bg-[#7EADD2] text-white flex items-center justify-center">
                       {partner.icon}
                     </Box>
                     <Typography>{partner.name}</Typography>
@@ -48,25 +55,37 @@ const RecentWork = () => {
             </Box>
           </Grid>
 
-          {/* Image Gallery */}
+          {/* Image Gallery with Horizontal Scroll */}
           <Grid item xs={12} md={9}>
-            <Grid container spacing={3}>
-              {[1, 2, 3].map((img, index) => (
-                <Grid item xs={12} md={4} key={index}>
-                  <motion.div
-                    whileHover={{ y: -10 }}
-                    className="relative h-[300px]"
-                  >
-                    <Image
-                      src={`/images/work-${img}.jpg`}
-                      alt={`Trabajo reciente ${img}`}
-                      fill
-                      className="object-cover rounded-lg"
-                    />
-                  </motion.div>
-                </Grid>
+            <Box
+              className="flex overflow-x-auto space-x-4"
+              style={{
+                display: 'flex',
+                overflowX: 'auto',
+                gap: '1rem',
+                paddingBottom: '1rem',
+                scrollbarWidth: 'none',
+              }}
+            >
+              {selectedPartner.gallery.map((img, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -10 }}
+                  style={{
+                    minWidth: '300px',
+                    height: '300px',
+                    position: 'relative',
+                  }}
+                >
+                  <Image
+                    src={img}
+                    alt={`Trabajo reciente ${selectedPartner.name} ${index + 1}`}
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </motion.div>
               ))}
-            </Grid>
+            </Box>
           </Grid>
         </Grid>
       </Container>

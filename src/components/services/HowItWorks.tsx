@@ -7,17 +7,17 @@ import { motion } from 'framer-motion';
 
 const steps = [
   {
-    icon: <LocalShipping className="text-blue-600 text-5xl" />,
+    icon: <LocalShipping className="text-[#7EADD2] text-5xl" />,
     title: 'Lorem ipsum dolor',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
-    icon: <Inventory className="text-blue-600 text-5xl" />,
+    icon: <Inventory className="text-[#7EADD2]text-5xl" />,
     title: 'Lorem ipsum dolor',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
-    icon: <Support className="text-blue-600 text-5xl" />,
+    icon: <Support className="text-[#7EADD2] text-5xl" />,
     title: 'Lorem ipsum dolor',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   }
@@ -25,7 +25,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <Box className="py-16">
+    <Box className="py-16 pt-36">
       <Container>
         <Typography variant="h2" className="text-3xl font-bold text-center mb-16">
           ¿Cómo funciona?

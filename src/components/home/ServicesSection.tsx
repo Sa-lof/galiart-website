@@ -5,25 +5,27 @@ import { Box, Container, Typography, Grid, Button } from '@mui/material';
 import { LocalShipping, Inventory, Support, Assignment } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
+import MiImagen from '../../images/home/image-removebg-preview (1) 1.png';
 
 const services = [
   {
-    icon: <LocalShipping className="text-blue-600 text-4xl" />,
+    icon: <LocalShipping className="text-[#7EADD2] text-4xl" />,
     title: 'Lorem ipsum',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
   },
   {
-    icon: <Inventory className="text-blue-600 text-4xl" />,
+    icon: <Inventory className="text-[#7EADD2] text-4xl" />,
     title: 'Lorem ipsum',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
   },
   {
-    icon: <Support className="text-blue-600 text-4xl" />,
+    icon: <Support className="text-[#7EADD2] text-4xl" />,
     title: 'Lorem ipsum',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
   },
   {
-    icon: <Assignment className="text-blue-600 text-4xl" />,
+    icon: <Assignment className="text-[#7EADD2] text-4xl" />,
     title: 'Lorem ipsum',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
   }
@@ -31,14 +33,14 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <Box className="py-16 bg-gray-50">
+    <Box className="py-16">
       <Container>
         <Box className="flex justify-between items-center mb-12">
           <Typography variant="h2" className="text-3xl font-bold">
             Nuestros servicios
           </Typography>
           <Link href="/servicios">
-            <Button variant="text" className="text-blue-600 hover:bg-blue-50">
+            <Button variant="text" className="bg-[#7EADD2] hover:bg-[#00253C] text-white">
               Descubre más
             </Button>
           </Link>
@@ -65,21 +67,43 @@ const ServicesSection = () => {
           ))}
         </Grid>
 
-        <Box className="mt-16 bg-blue-600 rounded-lg p-8 text-white">
+        <Box className="mt-16 bg-gray-100 rounded-lg p-8">
           <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={8}>
-              <Typography variant="h3" className="text-2xl md:text-3xl font-bold mb-4">
+            {/* Imagen a la izquierda */}
+            <Grid item xs={12} md={6}>
+              <Box
+                style={{
+                  position: 'relative',
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  width: '100%',
+                  height: '250px', // Altura fija para la imagen
+                }}
+              >
+                <Image
+                  src={MiImagen}
+                  alt="Cajas"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </Box>
+            </Grid>
+            {/* Contenido a la derecha */}
+            <Grid item xs={12} md={6}>
+              <Typography
+                variant="h3"
+                className="text-2xl md:text-3xl font-bold mb-4 text-gray-800"
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Typography>
-              <Typography className="text-blue-100">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
+              <Typography className="text-gray-600 mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor
+                sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
               </Typography>
-            </Grid>
-            <Grid item xs={12} md={4} className="text-center md:text-right">
-              <Button 
-                variant="contained" 
-                className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3"
+              <Button
+                variant="contained"
+                className="bg-[#7EADD2] hover:bg-[#00253C] text-white px-6 py-2 rounded-lg"
               >
                 Cotiza ahora
               </Button>
