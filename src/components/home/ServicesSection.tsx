@@ -6,7 +6,7 @@ import { LocalShipping, Inventory, Support, Assignment } from '@mui/icons-materi
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import MiImagen from '../../images/home/image-removebg-preview (1) 1.png';
+import MiImagen from '../../images/home/home3.jpg';
 
 const services = [
   {

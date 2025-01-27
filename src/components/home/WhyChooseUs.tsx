@@ -4,8 +4,8 @@ import React from 'react';
 import { Box, Container, Typography, Grid } from '@mui/material';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import MiImagen from '../../images/home/box-15287_1280.jpg';
-import MiImagen2 from '../../images/home/forklift-1796_1280.jpeg';
+import MiImagen from '../../images/home/home1.jpg';
+import MiImagen2 from '../../images/home/home2.jpg';
 import MiImagen3 from '../../images/Group 1.png';
 
 const WhyChooseUs = () => {
