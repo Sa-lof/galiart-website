@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import { Box, Container, Typography, Grid } from '@mui/material';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import MiImagen from '../../images/about/image2.png';
-import MiImagen2 from '../../images/about/image3.png';
-import MiImagen3 from '../../images/about/image4.png';
+import MiImagen from '../../images/about/client1.jpg';
+import MiImagen2 from '../../images/about/client2.jpg';
+import MiImagen3 from '../../images/about/client3.jpg';
 
 const partners = [
   { name: 'Meta', icon: 'M', gallery: [MiImagen.src, MiImagen.src, MiImagen.src] },

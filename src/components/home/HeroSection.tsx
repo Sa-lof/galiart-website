@@ -4,7 +4,7 @@ import React from 'react';
 import { Box, Typography, Button, Container } from '@mui/material';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import MiImagen from '../../images/home/image 1.png';
+import MiImagen from '../../images/home/home4.png';
 import { CheckCircle } from '@mui/icons-material';
 
 const HeroSection = () => {

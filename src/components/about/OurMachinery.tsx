@@ -4,7 +4,9 @@ import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import MiImagen from '../../images/about/image2.png';
+import MiImagen from '../../images/about/about1.jpg';
+import MiImagen2 from '../../images/about/about2.jpg';
+import MiImagen3 from '../../images/about/about3.jpg';
 
 const machinery = [
   {
@@ -15,17 +17,12 @@ const machinery = [
   {
     title: 'Lorem ipsum dolor',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: MiImagen.src
+    image: MiImagen2.src
   },
   {
     title: 'Lorem ipsum dolor',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: MiImagen.src
-  },
-  {
-    title: 'Lorem ipsum dolor',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: MiImagen.src
+    image: MiImagen3.src
   }
 ];
 

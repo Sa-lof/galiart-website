@@ -4,7 +4,7 @@ import React from 'react';
 import { Box, Container, Typography, Grid, Button } from '@mui/material';
 import { Inventory2 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-import MiImagen from '../../images/about/image.jpeg';
+import MiImagen from '../../images/about/about4.png';
 
 const values = [
   'Lorem ipsum dolor sit amet',
