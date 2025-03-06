@@ -5,7 +5,17 @@ import { Box, Typography, Button, Container } from '@mui/material';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import MiImagen from '../../images/home/home4.png';
-import { CheckCircle } from '@mui/icons-material';
+import nissan from '../../images/home/nissan.jpeg';
+import ford from '../../images/home/ford.jpeg';
+import fram from '../../images/home/Fram.jpeg';
+import wix from '../../images/home/wix.png';
+
+const empresas = [
+  { nombre: 'Nissan Mexicana', logo: nissan },
+  { nombre: 'Ford Motor Company México', logo: ford },
+  { nombre: 'Fram Group', logo: fram },
+  { nombre: 'Wix Filters', logo: wix }
+];
 
 const HeroSection = () => {
   return (
@@ -18,10 +28,10 @@ const HeroSection = () => {
             transition={{ duration: 0.5 }}
           >
             <Typography variant="h1" className="text-4xl md:text-5xl font-bold mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            No solo entregamos productos, entregamos confianza y compromiso.
             </Typography>
             <Typography className="text-gray-600 mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Transformamos cartón y papel en soluciones de empaque eficientes y personalizadas.
             </Typography>
             
             <Box className="flex gap-4 mb-8">
@@ -39,26 +49,23 @@ const HeroSection = () => {
               </Button>
             </Box>
 
-            <Box className="flex flex-wrap gap-4">
-              {['Certificación 1', 'Certificación 2', 'Certificación 3'].map((cert, index) => (
-                <Box key={index} className="flex items-center gap-2">
-                  <CheckCircle style={{ color: '#00253C' }} /> {/* Ícono de check */}
-                  <Typography>{cert}</Typography>
-                </Box>
-              ))}
-            </Box>
-
             <Box className="mt-8">
               <Typography className="text-gray-600 text-left mb-4">
                 Más de 40 empresas confían en GALIART
               </Typography>
               <Box className="flex justify-left gap-4">
-                {['Stark', 'Meta', 'Apple', 'Skype'].map((company, index) => (
+                {empresas.map((empresa, index) => (
                   <Box 
-                    key={index}
-                    className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center"
+                    key={index} 
+                    className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-gray-200"
                   >
-                    {company[0]}
+                    <Image 
+                      src={empresa.logo} 
+                      alt={empresa.nombre} 
+                      width={64} 
+                      height={64} 
+                      className="object-cover w-full h-full"
+                    />
                   </Box>
                 ))}
               </Box>
