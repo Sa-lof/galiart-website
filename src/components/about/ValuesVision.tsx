@@ -35,9 +35,7 @@ const ValuesVision = () => {
               ¿Quiénes somos?
             </Typography>
             <Typography className="mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Somos una empresa 100% mexicana con 25 años de experiencia en el ramo de la fabricación de cajas de cartón caple y papel. Ubicados en el oriente de la CDMX contamos con un área de fabricación de 2000m cuadrados y una capacidad de fabricación de 400000 de cajas mensuales . Contamos con impresión desde una tinta hasta selección de colores con barniz.
             </Typography>
             <Button variant="contained" className="text-white bg-[#7EADD2] hover:bg-[#00253C]">
               Cotiza ahora
@@ -74,40 +72,21 @@ const ValuesVision = () => {
                   </motion.div>
                 </Grid>
                 <Grid item xs={12}>
-                  <Grid container spacing={4}>
-                    <Grid item xs={6}>
-                      <motion.div
+                  <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="bg-[#7EADD2] text-white p-6 rounded-lg shadow-sm h-full"
                       >
                         <Typography variant="h3" className="text-2xl font-bold mb-6">
-                          Misión
+                          Misión y Visión
                         </Typography>
                         <Typography>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                          incididunt ut labore et dolore magna aliqua.
+                        Ser el mejor socio posible al liderear con calidad y servicio en el ramo. 
+Ofrecer un espacio seguro e incluyente,así oportunidades significativas de trabajo,adquirir nuevas habilidades y desarrollar carreras profesionales con éxito. 
+Cuidar nuestros recursos naturales y fomentar prácticas que ayuden a tener un planeta más sostenible
                         </Typography>
                       </motion.div>
-                    </Grid>
-                    <Grid item xs={6}>
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        className="bg-[#7EADD2] text-white p-6 rounded-lg shadow-sm h-full"
-                      >
-                        <Typography variant="h3" className="text-2xl font-bold mb-6">
-                          Visión
-                        </Typography>
-                        <Typography>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                          incididunt ut labore et dolore magna aliqua.
-                        </Typography>
-                      </motion.div>
-                    </Grid>
-                  </Grid>
                 </Grid>
               </Grid>
             </motion.div>

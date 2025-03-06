@@ -23,10 +23,7 @@ const WhyChooseUs = () => {
           </Grid>
           <Grid item xs={12} md={8}>
             <Typography className="text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Somos una empresa 100% mexicana con 25 años de experiencia en el ramo de la fabricación de cajas de cartón caple y papel. Ubicados en el oriente de la CDMX contamos con un área de fabricación de 2000m cuadrados y una capacidad de fabricación de 400000 de cajas mensuales . Contamos con impresión desde una tinta hasta selección de colores con barniz.
             </Typography>
           </Grid>
         </Grid>
@@ -72,8 +69,7 @@ const WhyChooseUs = () => {
                 className="bg-gray-50 p-6 rounded-lg"
               >
                 <Typography className="text-gray-700">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                  eiusmod tempor incididunt ut labore et dolore.
+                25 años de experiencia en el mercado
                 </Typography>
               </motion.div>
 
@@ -85,9 +81,8 @@ const WhyChooseUs = () => {
                 }}
               >
                 <Typography variant="h3" className="text-4xl font-bold text-white mb-2">
-                  0%
+                La más alta calidad de materiales 
                 </Typography>
-                <Typography className='text-white'>Lorem ipsum</Typography>
               </motion.div>
             </Box>
           </Grid>
@@ -136,9 +131,9 @@ const WhyChooseUs = () => {
                 }}
               >
                 <Typography variant="h3" className="text-4xl font-bold text-white mb-2">
-                  00
+                  99.7% 
                 </Typography>
-                <Typography className='text-white'>Proyectos</Typography>
+                <Typography className='text-white'>Índice de servicio</Typography>
               </motion.div>
 
               <motion.div
@@ -154,10 +149,9 @@ const WhyChooseUs = () => {
                   textAlign: 'center',
                 }}
               >
-                <Typography className="text-gray-700">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                  eiusmod tempor incididunt ut labore et dolore.
-                </Typography>
+      <Typography className="text-gray-600 mt-2">
+      Servicio Justo a Tiempo. Nos aseguramos de entregar cada pedido con rapidez y precisión, garantizando que nuestros clientes reciban los productos en el momento adecuado. Optimizamos la logística para minimizar retrasos y maximizar la eficiencia.
+      </Typography>
               </motion.div>
             </Box>
           </Grid>
