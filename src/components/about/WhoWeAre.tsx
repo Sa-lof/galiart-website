@@ -15,13 +15,15 @@ const WhoWeAre = () => {
           className="text-center"
         >
           <Typography variant="h1" className="text-4xl md:text-5xl font-bold mb-4">
-            Lorem ipsum dolor sit amet,
+            25 Años de Experiencia en Empaques Innovadores
           </Typography>
           <Typography variant="h1" className="text-4xl md:text-5xl font-bold mb-4">
-            consectetur adipiscing elit.
+            Calidad y Compromiso 100% Mexicano
           </Typography>
           <Typography variant="subtitle1" className="text-gray-600 max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            En GALIART nos especializamos en el diseño y manufactura de cajas para empacar refacciones.
+            Con instalaciones en el oriente de la CDMX y la capacidad de producir hasta 400,000 cajas mensuales,
+            transformamos cartón y papel en soluciones de empaque seguras, eficientes y personalizadas.
           </Typography>
         </motion.div>
       </Container>

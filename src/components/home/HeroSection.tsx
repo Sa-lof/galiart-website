@@ -38,12 +38,14 @@ const HeroSection = () => {
               <Button 
                 variant="contained" 
                 className="bg-[#7EADD2] hover:bg-[#00253C] text-white px-6 py-2"
+                href='/contacto'
               >
                 Cotiza ahora
               </Button>
               <Button 
                 variant="outlined" 
                 className="border-[#7EADD2] text-[#7EADD2] hover:border-[#00253C] hover:text-[#00253C] px-6 py-2"
+                href='/nosotros'
               >
                 Descubre más
               </Button>

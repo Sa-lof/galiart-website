@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Box, TextField, Button } from '@mui/material';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   nombre: string;
@@ -18,6 +19,8 @@ const ContactForm = () => {
     asunto: '',
     mensaje: ''
   });
+  const [isSending, setIsSending] = useState(false);
+  const [message, setMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -29,8 +32,31 @@ const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log(formData);
+    setIsSending(true);
+    
+    emailjs.send(
+      'YOUR_SERVICE_ID',    // Reemplaza con tu Service ID de EmailJS
+      'YOUR_TEMPLATE_ID',   // Reemplaza con tu Template ID de EmailJS
+      formData as unknown as Record<string, unknown>,
+      'YOUR_PUBLIC_KEY'     // Reemplaza con tu Public Key de EmailJS
+    ).then(
+      (response) => {
+        console.log('Email enviado exitosamente:', response.status, response.text);
+        setMessage('¡Tu mensaje ha sido enviado!');
+        setFormData({
+          nombre: '',
+          correo: '',
+          asunto: '',
+          mensaje: ''
+        });
+      },
+      (err) => {
+        console.error('Error al enviar el email:', err);
+        setMessage('Hubo un error al enviar tu mensaje. Inténtalo de nuevo más tarde.');
+      }
+    ).finally(() => {
+      setIsSending(false);
+    });
   };
 
   return (
@@ -88,10 +114,12 @@ const ContactForm = () => {
           type="submit"
           variant="contained"
           fullWidth
+          disabled={isSending}
           className="text-white bg-[#7EADD2] hover:bg-[#00253C] py-3"
         >
-          Enviar
+          {isSending ? 'Enviando...' : 'Enviar'}
         </Button>
+        {message && <p className="text-center mt-4">{message}</p>}
       </form>
     </motion.div>
   );

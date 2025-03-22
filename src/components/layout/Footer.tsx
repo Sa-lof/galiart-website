@@ -13,32 +13,25 @@ const Footer = () => {
           <Grid container spacing={6}>
             <Grid item xs={12} md={6}>
               <Box className="mb-6">
-              <Link href="/" className="flex items-center gap-2">
-                <Image
-                  src={MiImagen}
-                  alt="Galiart Logo"
-                  width={40}
-                  height={40}
-                  className="cursor-pointer"
-                />
-                <Typography variant="h6" className="text-[#00253C] font-bold">
-                  GALIART
-                </Typography>
-              </Link>
+                <Link href="/" className="flex items-center gap-2">
+                  <Image
+                    src={MiImagen}
+                    alt="GALIART Logo"
+                    width={40}
+                    height={40}
+                    className="cursor-pointer"
+                  />
+                  <Typography variant="h6" className="text-[#00253C] font-bold">
+                    GALIART
+                  </Typography>
+                </Link>
               </Box>
               <Typography variant="h3" className="text-2xl font-bold mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Empaques Innovadores para Refacciones
               </Typography>
               <Typography className="mb-6 text-blue-100">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.
+                Con 25 años de experiencia, en GALIART transformamos cartón y papel en soluciones de empaque seguras y personalizadas, garantizando la protección y presentación de tus refacciones.
               </Typography>
-              <Button
-                variant="contained"
-                className="text-[#7EADD2] bg-white border-white hover:border-[#00253C] hover:bg-[#00253C] hover:text-white  px-8 py-3"
-              >
-                Cotiza ahora
-              </Button>
             </Grid>
 
             <Grid item xs={12} md={6}>
@@ -64,7 +57,7 @@ const Footer = () => {
                 <Grid item xs={6} sm={4}>
                   <Typography className="font-bold mb-4">Servicios</Typography>
                   <Box className="space-y-2">
-                    {['Servicio 1', 'Servicio 2', 'Servicio 3', 'Servicio 4'].map((service, index) => (
+                    {['Diseño Personalizado', 'Manufactura de Cajas', 'Innovación en Empaques', 'Entrega Justo a Tiempo'].map((service, index) => (
                       <Link
                         key={index}
                         href="/servicios"
@@ -102,18 +95,8 @@ const Footer = () => {
           <Grid container justifyContent="space-between" alignItems="center">
             <Grid item>
               <Typography className="text-blue-100">
-                © Copyright GALIART 2024. by Amoxtli Web Developers
+                © Copyright GALIART 2024. by <Link href="https://amoxtli.tech" target="_blank">Amoxtli Web Developers</Link>
               </Typography>
-            </Grid>
-            <Grid item>
-              <Box className="flex gap-4">
-                <Link href="/privacy" className="text-blue-100 hover:text-white">
-                  Política de privacidad
-                </Link>
-                <Link href="/terms" className="text-blue-100 hover:text-white">
-                  Términos y condiciones
-                </Link>
-              </Box>
             </Grid>
           </Grid>
         </Box>

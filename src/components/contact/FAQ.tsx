@@ -7,17 +7,20 @@ import { motion } from 'framer-motion';
 
 const faqs = [
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    question: '¿Cuánto tiempo tarda la producción y entrega de mis cajas?',
+    answer:
+      'En GALIART, contamos con 25 años de experiencia y procesos optimizados. Normalmente, el tiempo de producción y entrega varía entre 7 a 10 días hábiles, dependiendo del volumen y complejidad del pedido.',
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    question: '¿Puedo personalizar el diseño de mis empaques?',
+    answer:
+      'Sí, ofrecemos soluciones de diseño personalizado. Nuestro equipo de expertos trabaja contigo para crear empaques únicos que se adapten a la imagen y necesidades de tu negocio, garantizando funcionalidad y estética.',
   },
   {
-    question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-  }
+    question: '¿Qué medidas de calidad aplican en la fabricación de las cajas?',
+    answer:
+      'Cada caja pasa por un estricto control de calidad en todas sus etapas, desde la selección de materiales hasta el acabado final, asegurando productos duraderos y de alta presentación para proteger tus refacciones.',
+  },
 ];
 
 const FAQ = () => {
@@ -29,44 +32,44 @@ const FAQ = () => {
 
   return (
     <Box className="py-16 bg-gray-50">
-  <Container>
-    <Typography variant="h2" className="text-3xl font-bold text-center mb-12">
-      Preguntas frecuentes
-    </Typography>
+      <Container>
+        <Typography variant="h2" className="text-3xl font-bold text-center mb-12">
+          Preguntas frecuentes
+        </Typography>
 
-    <Box className="max-w-3xl mx-auto">
-      {faqs.map((faq, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="mb-4"
-        >
-          <Accordion
-            expanded={expanded === `panel${index}`}
-            onChange={handleChange(`panel${index}`)}
-            className="rounded-lg border border-gray-200 overflow-hidden"
-            style={{
-              marginBottom: '1rem', 
-              transition: 'all 0.3s ease', 
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMore />}
-              className="bg-white hover:bg-gray-50"
+        <Box className="max-w-3xl mx-auto">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="mb-4"
             >
-              <Typography className="font-medium">{faq.question}</Typography>
-            </AccordionSummary>
-            <AccordionDetails className="bg-white">
-              <Typography className="text-gray-600">{faq.answer}</Typography>
-            </AccordionDetails>
-          </Accordion>
-        </motion.div>
-      ))}
+              <Accordion
+                expanded={expanded === `panel${index}`}
+                onChange={handleChange(`panel${index}`)}
+                className="rounded-lg border border-gray-200 overflow-hidden"
+                style={{
+                  marginBottom: '1rem',
+                  transition: 'all 0.3s ease',
+                }}
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMore />}
+                  className="bg-white hover:bg-gray-50"
+                >
+                  <Typography className="font-medium">{faq.question}</Typography>
+                </AccordionSummary>
+                <AccordionDetails className="bg-white">
+                  <Typography className="text-gray-600">{faq.answer}</Typography>
+                </AccordionDetails>
+              </Accordion>
+            </motion.div>
+          ))}
+        </Box>
+      </Container>
     </Box>
-  </Container>
-</Box>
   );
 };
 

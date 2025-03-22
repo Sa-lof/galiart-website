@@ -13,7 +13,7 @@ const ContactInfo = () => {
         Contáctanos
       </Typography>
       <Typography className="text-gray-600 mb-8">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        En GALIART estamos a tu disposición para ayudarte a encontrar la solución perfecta en empaques.
       </Typography>
 
       {/* Información de Contacto */}
@@ -25,7 +25,7 @@ const ContactInfo = () => {
           className="flex items-center gap-4"
         >
           <Email className="text-[#00253C]" />
-          <Typography>correo@correo.com</Typography>
+          <Typography>info@galiart.com</Typography>
         </motion.div>
 
         <motion.div
@@ -35,7 +35,7 @@ const ContactInfo = () => {
           className="flex items-center gap-4"
         >
           <Phone className="text-[#00253C]" />
-          <Typography>55 5555 5555</Typography>
+          <Typography>55 1234 5678</Typography>
         </motion.div>
 
         <motion.div
@@ -46,9 +46,9 @@ const ContactInfo = () => {
         >
           <LocationOn className="text-[#00253C]" />
           <Typography>
-            Lorem ipsum dolor sit amet, 123, Consectetur Ave,
+            Av. Industrial 456, Col. Tecnológica,
             <br />
-            Suite 456, Dolor City, CA 78910.
+            Iztapalapa, CDMX, México.
           </Typography>
         </motion.div>
       </Box>
@@ -61,7 +61,7 @@ const ContactInfo = () => {
           }}
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.7260543957237!2d-122.0842494!3d37.4220656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5c37d1b1a45%3A0x70c327288e220a36!2sGoogleplex!5e0!3m2!1ses!2smx!4v1617754637084!5m2!1ses!2smx"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8537842752786!2d-99.08549468456765!3d19.39100378697195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff3b7af3a7f9%3A0x9e7c91a6f9e2b2f1!2sCDMX%2C%20M%C3%A9xico!5e0!3m2!1ses!2sus!4v1680000000000"
             width="100%"
             height="100%"
             style={{ border: 0 }}

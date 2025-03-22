@@ -8,18 +8,21 @@ import { motion } from 'framer-motion';
 const steps = [
   {
     icon: <LocalShipping className="text-[#7EADD2] text-5xl" />,
-    title: 'Lorem ipsum dolor',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    title: 'Consulta y Cotización',
+    description:
+      'Inicia tu proyecto solicitando una cotización. Nuestro equipo te brinda asesoría especializada para diseñar la solución perfecta para tus necesidades de empaque.'
   },
   {
-    icon: <Inventory className="text-[#7EADD2]text-5xl" />,
-    title: 'Lorem ipsum dolor',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    icon: <Inventory className="text-[#7EADD2] text-5xl" />,
+    title: 'Producción de Alta Calidad',
+    description:
+      'Con 25 años de experiencia y tecnología de punta, fabricamos cajas de cartón y papel con los mejores materiales, garantizando la protección de tus refacciones.'
   },
   {
     icon: <Support className="text-[#7EADD2] text-5xl" />,
-    title: 'Lorem ipsum dolor',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    title: 'Entrega Puntual y Soporte',
+    description:
+      'Aseguramos entregas justas a tiempo y ofrecemos soporte postventa continuo para que tu experiencia con nosotros sea completa y satisfactoria.'
   }
 ];
 

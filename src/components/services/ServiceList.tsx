@@ -2,44 +2,47 @@
 
 import React, { useState } from 'react';
 import { Box, Container, Typography, Button, Grid, useMediaQuery } from '@mui/material';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import MiImagen from '../../images/services/services1.jpg';
-import MiImagen2 from '../../images/services/services2.jpg';
-import MiImagen3 from '../../images/services/services3.jpg';
+import { DesignServices, Inventory, Build, LocalShipping } from '@mui/icons-material';
 
 const services = [
   {
-    image: MiImagen.src,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    icon: <DesignServices className="text-[#7EADD2] text-6xl" />,
+    title: 'Diseño Personalizado',
+    description:
+      'Creamos empaques únicos a la medida, diseñados para destacar y proteger tus refacciones, combinando funcionalidad y estilo.',
   },
   {
-    image: MiImagen2.src,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    icon: <Inventory className="text-[#7EADD2] text-6xl" />,
+    title: 'Manufactura de Calidad',
+    description:
+      'Utilizamos materiales de primera calidad y tecnología de punta para producir cajas duraderas que cumplen con los estándares más altos.',
   },
   {
-    image: MiImagen3.src,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    icon: <Build className="text-[#7EADD2] text-6xl" />,
+    title: 'Innovación en Empaques',
+    description:
+      'Implementamos las últimas tendencias en diseño y procesos, optimizando la eficiencia y el impacto visual de tus empaques.',
   },
   {
-    image: MiImagen.src,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    icon: <LocalShipping className="text-[#7EADD2] text-6xl" />,
+    title: 'Logística y Entrega Puntual',
+    description:
+      'Nuestra cadena de suministro garantiza que cada pedido se entregue a tiempo, sin importar la magnitud del proyecto.',
   },
   {
-    image: MiImagen2.src,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    icon: <DesignServices className="text-[#7EADD2] text-6xl" />,
+    title: 'Asesoría Especializada',
+    description:
+      'Contamos con un equipo de expertos que te acompaña en cada paso del proceso, desde el diseño hasta la entrega final.',
   },
   {
-    image: MiImagen3.src,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    icon: <Inventory className="text-[#7EADD2] text-6xl" />,
+    title: 'Control de Calidad Riguroso',
+    description:
+      'Cada caja pasa por un estricto control de calidad para asegurar que el producto final cumpla con tus expectativas y estándares.',
   },
 ];
 
@@ -60,11 +63,11 @@ const ServiceList = () => {
   const totalPages = Math.ceil(services.length / itemsPerPage);
 
   const handleNext = () => {
-    setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages - 1));
   };
 
   const handlePrevious = () => {
-    setCurrentPage((prevPage) => (prevPage - 1 + totalPages) % totalPages);
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
   };
 
   const currentServices = services.slice(
@@ -87,29 +90,27 @@ const ServiceList = () => {
               >
                 <Grid container>
                   <Grid item xs={12} md={4}>
-                    <Box className="relative h-[300px]">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover"
-                      />
+                    <Box className="flex items-center justify-center h-[300px]">
+                      {service.icon}
                     </Box>
                   </Grid>
                   <Grid item xs={12} md={8}>
-                    <Box className="p-6" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    <Box
+                      className="p-6"
+                      style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+                    >
                       <Typography variant="h5" className="font-bold mb-4">
                         {service.title}
                       </Typography>
                       <Typography className="text-gray-600 mb-6" style={{ flexGrow: 1 }}>
                         {service.description}
                       </Typography>
-                      {/* Botón al final del contenedor */}
                       <Box>
-                        <Button 
+                        <Button
                           variant="contained"
                           className="text-white bg-[#7EADD2] hover:bg-[#00253C]"
                           fullWidth
+                          href='/contacto'
                         >
                           Cotiza ahora
                         </Button>
@@ -121,29 +122,21 @@ const ServiceList = () => {
             </Grid>
           ))}
         </Grid>
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          mt={4}
-          gap={2}
-        >
+        <Box display="flex" justifyContent="center" alignItems="center" mt={4} gap={2}>
           <Button
             variant="contained"
             onClick={handlePrevious}
             disabled={currentPage === 0}
             startIcon={<ArrowBackIcon />}
-            className='text-white bg-[#7EADD2] hover:bg-[#00253C]'
-          >
-          </Button>
+            className="text-white bg-[#7EADD2] hover:bg-[#00253C]"
+          />
           <Button
             variant="contained"
             onClick={handleNext}
             disabled={currentPage === totalPages - 1}
             endIcon={<ArrowForwardIcon />}
-            className='text-white bg-[#7EADD2] hover:bg-[#00253C]'
-          >
-          </Button>
+            className="text-white bg-[#7EADD2] hover:bg-[#00253C]"
+          />
         </Box>
       </Container>
     </Box>

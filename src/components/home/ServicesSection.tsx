@@ -2,32 +2,32 @@
 
 import React from 'react';
 import { Box, Container, Typography, Grid, Button } from '@mui/material';
-import { LocalShipping, Inventory, Support, Assignment } from '@mui/icons-material';
+import { LocalShipping, Inventory, Build, DesignServices } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import MiImagen from '../../images/home/home3.jpg';
+import MiImagen from '../../images/home/refacciones.jpg';
 
 const services = [
   {
-    icon: <LocalShipping className="text-[#7EADD2] text-4xl" />,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
+    icon: <DesignServices className="text-[#7EADD2] text-4xl" />,
+    title: 'Diseño Personalizado',
+    description: 'Creamos soluciones de empaque únicas para refacciones, adaptándonos a las necesidades específicas de cada cliente.'
   },
   {
     icon: <Inventory className="text-[#7EADD2] text-4xl" />,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
+    title: 'Manufactura de Cajas',
+    description: 'Fabricamos cajas de cartón y papel de alta resistencia, ideales para proteger y transportar refacciones de forma segura.'
   },
   {
-    icon: <Support className="text-[#7EADD2] text-4xl" />,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
+    icon: <Build className="text-[#7EADD2] text-4xl" />,
+    title: 'Innovación en Empaques',
+    description: 'Implementamos las últimas tendencias en diseño y materiales para ofrecer empaques modernos y funcionales.'
   },
   {
-    icon: <Assignment className="text-[#7EADD2] text-4xl" />,
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.'
+    icon: <LocalShipping className="text-[#7EADD2] text-4xl" />,
+    title: 'Entrega Justo a Tiempo',
+    description: 'Optimizamos nuestra logística para garantizar que tus pedidos lleguen en el momento exacto, sin retrasos.'
   }
 ];
 
@@ -37,10 +37,10 @@ const ServicesSection = () => {
       <Container>
         <Box className="flex justify-between items-center mb-12">
           <Typography variant="h2" className="text-3xl font-bold">
-            Nuestros servicios
+            Nuestros Servicios
           </Typography>
           <Link href="/servicios">
-            <Button variant="text" className="bg-[#7EADD2] hover:bg-[#00253C] text-white">
+            <Button variant="text" className="bg-[#7EADD2] hover:bg-[#00253C] text-white" href='/servicios'>
               Descubre más
             </Button>
           </Link>
@@ -77,12 +77,12 @@ const ServicesSection = () => {
                   borderRadius: '12px',
                   overflow: 'hidden',
                   width: '100%',
-                  height: '250px', // Altura fija para la imagen
+                  height: '250px',
                 }}
               >
                 <Image
                   src={MiImagen}
-                  alt="Cajas"
+                  alt="Diseño de cajas"
                   fill
                   style={{ objectFit: 'cover' }}
                 />
@@ -94,19 +94,11 @@ const ServicesSection = () => {
                 variant="h3"
                 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Empaques a la Medida para Refacciones
               </Typography>
               <Typography className="text-gray-600 mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+                Con 25 años de experiencia, en GALIART nos especializamos en el diseño y manufactura de cajas que protegen y resaltan tus refacciones. Utilizamos materiales de alta calidad y procesos innovadores para ofrecer soluciones de empaque seguras, funcionales y estéticas.
               </Typography>
-              <Button
-                variant="contained"
-                className="bg-[#7EADD2] hover:bg-[#00253C] text-white px-6 py-2 rounded-lg"
-              >
-                Cotiza ahora
-              </Button>
             </Grid>
           </Grid>
         </Box>

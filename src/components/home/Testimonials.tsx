@@ -7,33 +7,33 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.',
-    author: 'Lorem ipsum dolor',
-    company: 'Company Name',
+    content: 'La calidad de las cajas de GALIART es insuperable. Siempre cumplen con mis expectativas en diseño y resistencia.',
+    author: 'Carlos López',
+    company: 'Auto Refacciones S.A.',
     stars: 5
   },
   {
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.',
-    author: 'Lorem ipsum dolor',
-    company: 'Company Name',
+    content: 'Excelente servicio y puntualidad. Las cajas son ideales para proteger refacciones delicadas.',
+    author: 'Ana Martínez',
+    company: 'Refacciones del Centro',
     stars: 5
   },
   {
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.',
-    author: 'Lorem ipsum dolor',
-    company: 'Company Name',
+    content: 'Innovación y compromiso en cada proyecto. GALIART ha sido nuestro aliado estratégico en empaque.',
+    author: 'Jorge Ramírez',
+    company: 'Distribuidora Automotriz',
     stars: 5
   },
   {
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.',
-    author: 'Lorem ipsum dolor',
-    company: 'Company Name',
+    content: 'Recomiendo a GALIART por su atención personalizada y la calidad de sus productos. Transforman cada idea en un empaque funcional y atractivo.',
+    author: 'María González',
+    company: 'Taller Automotriz',
     stars: 5
   },
   {
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.',
-    author: 'Lorem ipsum dolor',
-    company: 'Company Name',
+    content: 'Con más de 25 años en el mercado, su experiencia se refleja en cada detalle de sus cajas. Muy satisfecho con el servicio.',
+    author: 'Ricardo Hernández',
+    company: 'Mecánica Moderna',
     stars: 5
   }
 ];
@@ -46,10 +46,10 @@ const Testimonials = () => {
           Lo que dicen nuestros clientes
         </Typography>
         <Typography className="text-center text-gray-600 mb-12">
-          Lorem ipsum dolor sit amet
+          La satisfacción de nuestros clientes es nuestro mejor aval.
         </Typography>
 
-        {/* Horizontal Scroll Container */}
+        {/* Contenedor de scroll horizontal */}
         <Box
           className="flex overflow-x-auto space-x-6"
           style={{
@@ -80,12 +80,6 @@ const Testimonials = () => {
                 {testimonial.content}
               </Typography>
               <Box className="flex items-center gap-3">
-                <div
-                  className="w-10 h-10 rounded-full bg-[#7EADD2]"
-                  style={{
-                    backgroundColor: '#7EADD2',
-                  }}
-                />
                 <Box>
                   <Typography className="font-medium">{testimonial.author}</Typography>
                   <Typography className="text-sm text-gray-500">

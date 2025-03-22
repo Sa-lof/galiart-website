@@ -10,20 +10,23 @@ import MiImagen3 from '../../images/about/about3.jpg';
 
 const machinery = [
   {
-    title: 'Lorem ipsum dolor',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: MiImagen.src
+    title: 'Prensa Flexográfica de Alta Velocidad',
+    description:
+      'Equipo de impresión de última generación que garantiza colores vivos y precisión en cada caja, adaptándose a diversos acabados y barnices.',
+    image: MiImagen.src,
   },
   {
-    title: 'Lorem ipsum dolor',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: MiImagen2.src
+    title: 'Troqueladora Industrial',
+    description:
+      'Máquina de troquelado que corta y da forma al cartón con exactitud, permitiendo diseños complejos y cortes precisos para empaques únicos.',
+    image: MiImagen2.src,
   },
   {
-    title: 'Lorem ipsum dolor',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: MiImagen3.src
-  }
+    title: 'Sistema de Ensamblaje Automatizado',
+    description:
+      'Tecnología de vanguardia que optimiza el proceso de plegado y ensamblaje, reduciendo tiempos de producción y garantizando la máxima calidad.',
+    image: MiImagen3.src,
+  },
 ];
 
 const OurMachinery = () => {
@@ -56,20 +59,13 @@ const OurMachinery = () => {
               }}
             >
               <Box className="relative h-[200px]">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
+                <Image src={item.image} alt={item.title} fill className="object-cover" />
               </Box>
               <Box className="p-6">
                 <Typography variant="h6" className="font-bold mb-3">
                   {item.title}
                 </Typography>
-                <Typography className="text-gray-600">
-                  {item.description}
-                </Typography>
+                <Typography className="text-gray-600">{item.description}</Typography>
               </Box>
             </motion.div>
           ))}
