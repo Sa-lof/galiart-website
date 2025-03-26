@@ -73,17 +73,12 @@ const Footer = () => {
                   <Typography className="font-bold mb-4">Contacto</Typography>
                   <Box className="space-y-2">
                     <Typography className="text-blue-100">
-                      Email: info@galiart.com
+                      Email: georgessemaan576@gmail.com
                     </Typography>
                     <Typography className="text-blue-100">
-                      Tel: +1 234 567 890
+                      Tel: 5557586517
                     </Typography>
-                    <Box className="flex gap-4 mt-4">
-                      <Facebook className="text-blue-100 hover:text-white cursor-pointer" />
-                      <Twitter className="text-blue-100 hover:text-white cursor-pointer" />
-                      <LinkedIn className="text-blue-100 hover:text-white cursor-pointer" />
-                      <Instagram className="text-blue-100 hover:text-white cursor-pointer" />
-                    </Box>
+                    
                   </Box>
                 </Grid>
               </Grid>
