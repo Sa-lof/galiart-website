@@ -23,7 +23,7 @@ export async function POST(request: Request): Promise<Response> {
     `;
 
     const msg = {
-      to: 'mtzelisalomon@gmail.com',  // Destinatario
+      to: 'georgessemaan576@gmail.com',  // Destinatario
       from: 'email-service@amoxtli.tech',        // Remitente (debe estar verificado en SendGrid)
       subject: emailSubject,
       text: emailText,
