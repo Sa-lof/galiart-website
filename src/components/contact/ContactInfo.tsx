@@ -25,7 +25,7 @@ const ContactInfo = () => {
           className="flex items-center gap-4"
         >
           <Email className="text-[#00253C]" />
-          <Typography>info@galiart.com</Typography>
+          <Typography>georgessemaan576@gmail.com</Typography>
         </motion.div>
 
         <motion.div
