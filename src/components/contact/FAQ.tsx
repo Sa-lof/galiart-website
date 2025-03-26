@@ -9,18 +9,33 @@ const faqs = [
   {
     question: '¿Cuánto tiempo tarda la producción y entrega de mis cajas?',
     answer:
-      'En GALIART, contamos con 25 años de experiencia y procesos optimizados. Normalmente, el tiempo de producción y entrega varía entre 7 a 10 días hábiles, dependiendo del volumen y complejidad del pedido.',
+      'Tiempo de fabricación de 4000pzas por hora',
   },
   {
     question: '¿Puedo personalizar el diseño de mis empaques?',
     answer:
-      'Sí, ofrecemos soluciones de diseño personalizado. Nuestro equipo de expertos trabaja contigo para crear empaques únicos que se adapten a la imagen y necesidades de tu negocio, garantizando funcionalidad y estética.',
+      'Si, se puede personalizar el diseño ya sea que sea su diseño o nosotros proponemos un diseño.',
   },
   {
     question: '¿Qué medidas de calidad aplican en la fabricación de las cajas?',
     answer:
-      'Cada caja pasa por un estricto control de calidad en todas sus etapas, desde la selección de materiales hasta el acabado final, asegurando productos duraderos y de alta presentación para proteger tus refacciones.',
+      'Se aplican normas ISO 9000',
   },
+  {
+    question: '¿Cuántas tintas se pueden imprimir?',
+    answer:
+      'Se pueden imprimir de una hasta seis tintas y barniz',
+  },
+  {
+    question: '¿En qué grosor de cartones pueden imprimir?',
+    answer:
+      'Se puede imprimir de 10 hasta 24 puntos de grosor',
+  },
+  {
+    question: '¿Cuál es el mínimo de fabricación?',
+    answer:
+      'Mínimo de fabricación es de 2000pzas',
+  }
 ];
 
 const FAQ = () => {

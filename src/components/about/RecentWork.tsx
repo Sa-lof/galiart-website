@@ -21,10 +21,10 @@ const partners = [
       "Creamos soluciones de empaques personalizados para Ford, garantizando seguridad y una excelente presentación de sus productos.",
   },
   {
-    name: "Fragroup",
+    name: "Framgroup",
     logo: fram,
     description:
-      "Implementamos procesos de manufactura de alta precisión para Fragroup, asegurando empaques a la medida y de alta calidad.",
+      "Implementamos procesos de manufactura de alta precisión para Framgroup, asegurando empaques a la medida y de alta calidad.",
   },
 ];
 
