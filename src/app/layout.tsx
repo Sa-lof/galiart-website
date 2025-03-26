@@ -4,6 +4,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Providers } from './providers';
 import { Metadata } from 'next';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 const MiImagen = '/images/main.svg';
@@ -61,6 +62,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        {/* Carga del script de SMTPJS */}
+        <Script
+          src="https://smtpjs.com/v3/smtp.js"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body className={inter.className}>
         <Providers>
           <Navbar />

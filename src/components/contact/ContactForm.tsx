@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Box, TextField, Button } from '@mui/material';
+import { TextField, Button } from '@mui/material';
 import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 
 interface FormData {
   nombre: string;
@@ -30,33 +29,38 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
-    
-    emailjs.send(
-      'YOUR_SERVICE_ID',    // Reemplaza con tu Service ID de EmailJS
-      'YOUR_TEMPLATE_ID',   // Reemplaza con tu Template ID de EmailJS
-      formData as unknown as Record<string, unknown>,
-      'YOUR_PUBLIC_KEY'     // Reemplaza con tu Public Key de EmailJS
-    ).then(
-      (response) => {
-        console.log('Email enviado exitosamente:', response.status, response.text);
-        setMessage('¡Tu mensaje ha sido enviado!');
-        setFormData({
-          nombre: '',
-          correo: '',
-          asunto: '',
-          mensaje: ''
-        });
-      },
-      (err) => {
-        console.error('Error al enviar el email:', err);
-        setMessage('Hubo un error al enviar tu mensaje. Inténtalo de nuevo más tarde.');
+
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!res.ok) {
+        throw new Error('Error en el envío del correo');
       }
-    ).finally(() => {
+
+      const data = await res.json();
+      console.log(data);
+      setMessage('¡Tu mensaje ha sido enviado!');
+      setFormData({
+        nombre: '',
+        correo: '',
+        asunto: '',
+        mensaje: ''
+      });
+    } catch (error) {
+      console.error('Error al enviar el email', error);
+      setMessage('Hubo un error al enviar tu mensaje. Inténtalo de nuevo más tarde.');
+    } finally {
       setIsSending(false);
-    });
+    }
   };
 
   return (
@@ -76,7 +80,6 @@ const ContactForm = () => {
           onChange={handleChange}
           className="bg-white"
         />
-
         <TextField
           fullWidth
           name="correo"
@@ -87,7 +90,6 @@ const ContactForm = () => {
           onChange={handleChange}
           className="bg-white"
         />
-
         <TextField
           fullWidth
           name="asunto"
@@ -97,7 +99,6 @@ const ContactForm = () => {
           onChange={handleChange}
           className="bg-white"
         />
-
         <TextField
           fullWidth
           name="mensaje"
@@ -109,7 +110,6 @@ const ContactForm = () => {
           onChange={handleChange}
           className="bg-white"
         />
-
         <Button
           type="submit"
           variant="contained"
